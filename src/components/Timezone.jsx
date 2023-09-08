@@ -1,5 +1,6 @@
 import React from "react";
 import { DateTime } from "luxon";
+import dude from "../assets/dude.png";
 
 function Timezone({ position }) {
   let dt = DateTime.now();
@@ -9,7 +10,7 @@ function Timezone({ position }) {
   return (
     <div className="row">
       <div className="col">
-        <img src="./src/assets/dude.png" />
+        <img src={dude} />
       </div>
       <div className="col">
         <div>
