@@ -13,18 +13,21 @@ import "leaflet/dist/leaflet.css";
 import "./App.css";
 
 function App() {
-  const [ip4, setIP4] = useState("");
-  const [ip6, setIP6] = useState("");
+  const [ip, setIP] = useState("");
+  const [isp, setISP] = useState("");
+  const [proxy, setProxy] = useState("");
   const [country, setCountry] = useState("");
   const [position, setPosition] = useState();
 
   const getData = async () => {
-    const res = await axios.get("https://geolocation-db.com/json/");
-    console.log(res.data);
-    setPosition([res.data.latitude, res.data.longitude]);
-    if (res.data.country_code) setCountry(res.data.country_code);
-    if (res.data.IPv4) setIP4(res.data.IPv4);
-    if (res.data.IPv6) setIP6(res.data.IPv6);
+    const res = await axios.get(
+      "https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_33crYBOUGJ51ykm7gAX0E5iCaEbGy"
+    );
+    setPosition([res.data.location.lat, res.data.location.lng]);
+    if (res.data.location.country) setCountry(res.data.location.country);
+    if (res.data.ip) setIP(res.data.ip);
+    if (res.data.isp) setISP(res.data.isp);
+    if (res.data.proxy) setProxy(res.data.proxy);
   };
 
   useEffect(() => {
@@ -54,7 +57,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Start ip4={ip4} ip6={ip6} country={country} />}
+            element={<Start ip={ip} isp={isp} country={country} />}
           />
           <Route path="/location" element={<MapView position={position} />} />
           <Route path="/timezone" element={<Timezone position={position} />} />
