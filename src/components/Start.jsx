@@ -1,11 +1,12 @@
 import React from "react";
 import ReactCountryFlag from "react-country-flag";
+import dude from "./src/assets/dude.png";
 
 function Start({ ip4, ip6, country }) {
   return (
     <div className="row">
       <div className="col">
-        <img src="./src/assets/dude.png" />
+        <img src={dude} />
       </div>
       <div className="col">
         <h2>Your current IP address:</h2>
