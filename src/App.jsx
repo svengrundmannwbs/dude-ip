@@ -36,7 +36,7 @@ function App() {
       <Router>
         <Navbar expand="lg" className="bg-body-tertiary">
           <Container>
-            <Navbar.Brand href="/">Ey Dude, whats my IP?!</Navbar.Brand>
+            <Navbar.Brand href="#">Ey Dude, whats my IP?!</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
