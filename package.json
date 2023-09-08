@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://svengrundmannwbs.github.io/dude-ip",
+  "homepage": "/svengrundmannwbs.github.io/dude-ip/#",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",

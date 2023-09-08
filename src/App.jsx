@@ -1,16 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  NavLink,
-} from "react-router-dom";
+import { HashRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import axios from "axios";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import MapView from "./components/MapView";
 import Start from "./components/Start";
 import Timezone from "./components/Timezone";
