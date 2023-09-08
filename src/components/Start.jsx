@@ -1,6 +1,6 @@
 import React from "react";
 import ReactCountryFlag from "react-country-flag";
-import dude from "./src/assets/dude.png";
+import dude from "../assets/dude.png";
 
 function Start({ ip4, ip6, country }) {
   return (
