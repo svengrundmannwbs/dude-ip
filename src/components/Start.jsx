@@ -1,14 +1,14 @@
 import React from "react";
 import ReactCountryFlag from "react-country-flag";
-import dude from "../assets/dude.png";
+import Dude from "./Dude";
 
-function Start({ ip, isp, proxy, country }) {
+function Start({ ip, isp, proxy, country, dudeText }) {
   return (
     <div className="row">
       <div className="col">
-        <img src={dude} />
+        <Dude dudeText={dudeText} />
       </div>
-      <div className="col">
+      <div className="col mt-5">
         <h2>Your current IP address:</h2>
         {ip ? <p>IP: {ip} </p> : <p>not found</p>}
         {isp ? <p>Your ISP: {isp}</p> : ""}

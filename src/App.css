@@ -1,0 +1,15 @@
+.dude {
+  margin: 0;
+  padding: 0;
+}
+.dudeText {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  top: 58px;
+  left: 92px;
+  transform: rotate(352deg);
+  margin: 0;
+  padding: 0;
+}

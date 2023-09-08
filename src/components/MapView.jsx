@@ -1,14 +1,14 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import dude from "../assets/dude.png";
+import Dude from "./Dude";
 
-function MapView({ position }) {
+function MapView({ position, dudeText }) {
   return (
     <div className="row">
       <div className="col">
-        <img src={dude} />
+        <Dude dudeText={dudeText} />
       </div>
-      <div className="col">
+      <div className="col mt-5">
         <div className="map">
           <MapContainer
             center={position}

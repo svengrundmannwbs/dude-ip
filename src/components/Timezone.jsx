@@ -1,8 +1,8 @@
 import React from "react";
 import { DateTime } from "luxon";
-import dude from "../assets/dude.png";
+import Dude from "./Dude";
 
-function Timezone({ position }) {
+function Timezone({ position, dudeText }) {
   let dt = DateTime.now();
   dt.zoneName; //=> 'America/New_York'
   dt.offset; //=> -240
@@ -10,9 +10,9 @@ function Timezone({ position }) {
   return (
     <div className="row">
       <div className="col">
-        <img src={dude} />
+        <Dude dudeText={dudeText} />
       </div>
-      <div className="col">
+      <div className="col mt-5">
         <div>
           <h1>TimeZoneShennanigans</h1>
           <p>TimeZone: {dt.zoneName}</p>

@@ -34,6 +34,20 @@ function App() {
     getData();
   }, []);
 
+  let dudeTexts = [
+    <>
+      Ey man, <br />
+      whats my IP?!
+    </>,
+    <>
+      Ey man, <br />
+      whats my location?!
+    </>,
+    <>
+      Ey man, <br />
+      whats my time?!
+    </>,
+  ];
   return (
     <main className="container">
       <Router>
@@ -57,10 +71,23 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Start ip={ip} isp={isp} country={country} />}
+            element={
+              <Start
+                ip={ip}
+                isp={isp}
+                country={country}
+                dudeText={dudeTexts[0]}
+              />
+            }
           />
-          <Route path="/location" element={<MapView position={position} />} />
-          <Route path="/timezone" element={<Timezone position={position} />} />
+          <Route
+            path="/location"
+            element={<MapView position={position} dudeText={dudeTexts[1]} />}
+          />
+          <Route
+            path="/timezone"
+            element={<Timezone position={position} dudeText={dudeTexts[2]} />}
+          />
         </Routes>
       </Router>
     </main>
