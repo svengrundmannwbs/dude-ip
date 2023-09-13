@@ -17,11 +17,14 @@ function App() {
   const [isp, setISP] = useState("");
   const [proxy, setProxy] = useState("");
   const [country, setCountry] = useState("");
+  const [countryInfo, setCountryInfo] = useState();
   const [position, setPosition] = useState();
 
   const getData = async () => {
     const res = await axios.get(
-      "https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_33crYBOUGJ51ykm7gAX0E5iCaEbGy"
+      `https://geo.ipify.org/api/v2/country,city,vpn?apiKey=${
+        import.meta.env.VITE_IPIFY_API_KEY
+      }`
     );
     setPosition([res.data.location.lat, res.data.location.lng]);
     if (res.data.location.country) setCountry(res.data.location.country);
@@ -30,9 +33,27 @@ function App() {
     if (res.data.proxy) setProxy(res.data.proxy);
   };
 
+  const getCountryData = async () => {
+    const res = await axios
+      .get(`https://restcountries.com/v3.1/alpha/${country}`)
+      .then((res) => {
+        const data = res.data[0];
+        setCountryInfo({
+          name: data.name.common,
+          flag: data.flags.png,
+          capital: data.capital,
+          population: data.population,
+        });
+      });
+  };
+
   useEffect(() => {
     getData();
   }, []);
+
+  useEffect(() => {
+    if (country) getCountryData();
+  }, [country]);
 
   let dudeTexts = [
     <>
