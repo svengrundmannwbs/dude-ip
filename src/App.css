@@ -13,3 +13,11 @@
   margin: 0;
   padding: 0;
 }
+.content {
+  background: rgb(27, 132, 241);
+  background: linear-gradient(
+    180deg,
+    rgb(18, 87, 160) 0%,
+    rgb(117, 143, 172) 100%
+  );
+}

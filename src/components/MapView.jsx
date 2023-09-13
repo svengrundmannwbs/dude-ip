@@ -4,11 +4,11 @@ import Dude from "./Dude";
 
 function MapView({ position, dudeText }) {
   return (
-    <div className="row">
-      <div className="col">
+    <div className="row g-0 content">
+      <div className="col left">
         <Dude dudeText={dudeText} />
       </div>
-      <div className="col mt-5">
+      <div className="col mt-5 right">
         <div className="map">
           <MapContainer
             center={position}

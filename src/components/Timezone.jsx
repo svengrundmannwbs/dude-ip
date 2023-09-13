@@ -4,19 +4,19 @@ import Dude from "./Dude";
 
 function Timezone({ position, dudeText }) {
   let dt = DateTime.now();
-  dt.zoneName; //=> 'America/New_York'
-  dt.offset; //=> -240
-  dt.daysInMonth; //=> 30
+  dt.zoneName;
+  dt.offset;
+  dt.daysInMonth;
   return (
-    <div className="row">
-      <div className="col">
+    <div className="row g-0 content">
+      <div className="col left">
         <Dude dudeText={dudeText} />
       </div>
-      <div className="col mt-5">
+      <div className="col mt-5 right">
         <div>
-          <h1>TimeZoneShennanigans</h1>
-          <p>TimeZone: {dt.zoneName}</p>
-          <p>Offset: {dt.offset}</p>
+          <h1>Your TimeZone</h1>
+          <p>Name: "{dt.zoneName}"</p>
+          <p>TimeOffset: {dt.offset}</p>
           <p>DaysInMonth: {dt.daysInMonth}</p>
         </div>
       </div>
